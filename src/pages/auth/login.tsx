@@ -1,6 +1,6 @@
-import { NextPage } from "next";
+import type { NextPage } from "next";
 import { signIn } from "next-auth/react";
-import { FaDiscord } from "react-icons/Fa";
+import { FaDiscord } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 
 const LoginPage: NextPage = () => {
@@ -14,7 +14,9 @@ const LoginPage: NextPage = () => {
             className={
               "flex w-full items-center gap-3 rounded-md bg-discord-500 px-6 py-3 pl-4 font-bold text-white transition-colors hover:bg-discord-600 active:bg-discord-700"
             }
-            onClick={() => signIn("discord")}
+            onClick={() => {
+              void signIn("discord");
+            }}
           >
             <FaDiscord className={"h-auto w-6"} />
             Continue with Discord
@@ -24,7 +26,9 @@ const LoginPage: NextPage = () => {
             className={
               "flex w-full items-center gap-3 rounded-md bg-white px-6 py-3 pl-4 font-bold text-black transition-colors hover:bg-opacity-90 active:bg-opacity-80"
             }
-            onClick={() => signIn("discord")}
+            onClick={() => {
+              void signIn("discord");
+            }}
           >
             <FcGoogle className={"h-auto w-6"} />
             Continue with Google

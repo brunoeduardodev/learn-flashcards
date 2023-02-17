@@ -1,7 +1,6 @@
 import { type NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
-import StudyingPicture from "../../public/images/studying-picture.svg";
 import Link from "next/link";
 
 const Home: NextPage = () => {
@@ -35,7 +34,12 @@ const Home: NextPage = () => {
           </h3>
         </div>
 
-        <Image src={StudyingPicture} alt={"Studying Picture"} />
+        <Image
+          src={"/static/images/studying-picture.svg"}
+          width={319}
+          height={332}
+          alt={"Studying Picture"}
+        />
 
         <div className="flex w-full flex-col gap-4">
           <p className="font-bold text-white text-opacity-90">
