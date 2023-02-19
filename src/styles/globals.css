@@ -5,3 +5,7 @@
 html {
     -webkit-tap-highlight-color: transparent;
 }
+
+body {
+    @apply bg-gradient-to-b from-[#060B27CA] to-[#070F3CcA] bg-opacity-75;
+}

@@ -27,7 +27,7 @@ const Home: NextPage = () => {
             Use the power of active recall to{" "}
             <span
               className={
-                "relative text-white after:absolute after:left-0 after:flex after:h-0.5 after:w-full after:origin-left after:animate-grow-x after:bg-orange-500"
+                "relative whitespace-nowrap text-white after:absolute after:left-0 after:flex after:h-0.5 after:w-full after:origin-left after:animate-grow-x after:bg-orange-500"
               }
             >
               improve your grade.
