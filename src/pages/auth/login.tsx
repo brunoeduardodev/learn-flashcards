@@ -1,7 +1,20 @@
 import type { NextPage } from "next";
 import { SocialLoginButton } from "../../components/auth/social-login-button";
+import type { WithLayout } from "../../layouts";
+import { MainAppLayout } from "../../layouts/app/main";
+import { useEffect } from "react";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/router";
 
-const LoginPage: NextPage = () => {
+const LoginPage: WithLayout<NextPage> = () => {
+  const session = useSession();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (session.status === "authenticated") {
+      void router.replace("/app");
+    }
+  }, [session.status, router]);
   return (
     <>
       <div
@@ -19,5 +32,7 @@ const LoginPage: NextPage = () => {
     </>
   );
 };
+
+LoginPage.Layout = MainAppLayout;
 
 export default LoginPage;

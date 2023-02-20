@@ -2,6 +2,7 @@ import type { GetServerSideProps, NextPage } from "next";
 import { getServerAuthSession } from "../../server/auth";
 import type { WithLayout } from "../../layouts";
 import { MainAppLayout } from "../../layouts/app/main";
+import { useSession } from "next-auth/react";
 
 const AppPage: WithLayout<NextPage> = () => {
   return <h1>You are logged in!</h1>;

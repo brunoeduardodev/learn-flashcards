@@ -9,6 +9,7 @@ import { MainLayout } from "../layouts/main";
 
 import { Inter } from "@next/font/google";
 import { hasLayout } from "../layouts";
+import Head from "next/head";
 
 const inter = Inter({
   weight: ["400", "500", "600", "700"],
@@ -34,6 +35,9 @@ const MyApp: AppType<{ session: Session | null }> = ({
         `}
       </style>
       <Layout>
+        <Head>
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+        </Head>
         <Component {...pageProps} />
       </Layout>
     </SessionProvider>
