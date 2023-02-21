@@ -24,7 +24,7 @@ const LoginPage: WithLayout<NextPage> = () => {
       >
         <h1 className={"text-4xl font-bold"}>Sign In</h1>
 
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col items-center gap-6">
           <SocialLoginButton target={"google"} />
           <SocialLoginButton target={"discord"} />
         </div>

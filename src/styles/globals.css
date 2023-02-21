@@ -7,6 +7,10 @@ html {
     overflow-x: hidden;
 }
 
+:focus-visible {
+    @apply outline-0 ring ring-indigo-900
+}
+
 body {
     @apply bg-gradient-to-b from-[#060B27CA] to-[#070F3CcA] bg-opacity-75 relative overflow-x-hidden;
 }

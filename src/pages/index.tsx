@@ -2,6 +2,7 @@ import { type NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import { buttonStyles } from "../components/button";
 
 const Home: NextPage = () => {
   return (
@@ -42,14 +43,18 @@ const Home: NextPage = () => {
           alt={"Studying Picture"}
         />
 
-        <div className="flex w-full flex-col gap-4">
+        <div className="flex w-full flex-col items-center gap-4">
           <p className="font-bold text-white text-opacity-90">
             What are you waiting for?
           </p>
 
           <Link
             href={"/app"}
-            className="active:bg-orange-8 00 w-full rounded-md bg-orange-600 px-4 py-2 font-bold text-white transition-colors  hover:bg-orange-700"
+            className={buttonStyles({
+              size: "md",
+              color: "primary",
+              align: "center",
+            })}
           >
             Start Studying
           </Link>
