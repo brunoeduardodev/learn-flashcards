@@ -43,13 +43,14 @@ model Session {
 }
 
 model User {
-    id            String    @id @default(cuid())
+    id            String       @id @default(cuid())
     name          String?
-    email         String?   @unique
+    email         String?      @unique
     emailVerified DateTime?
     image         String?
     accounts      Account[]
     sessions      Session[]
+    collections   Collection[]
 }
 
 model VerificationToken {
@@ -67,7 +68,10 @@ model Collection {
 
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
-    decks     Deck[]
+    user      User     @relation(fields: [userId], references: [id])
+
+    decks  Deck[]
+    userId String
 }
 
 model Deck {
